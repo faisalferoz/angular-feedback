@@ -17,7 +17,7 @@ angular.module('angular-send-feedback').directive('angularFeedback', [ function(
 
                 $.feedback = function(options) {
 
-                    var settings = $.extend({
+                    var settings = $.extend(true, {
                             ajaxURL:                '',
                             postBrowserInfo:        true,
                             postHTML:               true,

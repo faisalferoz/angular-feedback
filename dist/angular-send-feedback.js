@@ -1,6 +1,6 @@
 /**
  * Angular feedback directive similar to Google Feedback
- * @version v1.2.0 - 2016-06-28 * @link https://github.com/jacobscarter/angular-feedback
+ * @version v1.2.1 - 2017-06-12 * @link https://github.com/jacobscarter/angular-feedback
  * @author Jacob Carter <jacob@ieksolutions.com>
  * @license MIT License, http://www.opensource.org/licenses/MIT
  */
@@ -32,7 +32,7 @@ angular.module('angular-send-feedback').directive('angularFeedback', [ function(
 
                 $.feedback = function(options) {
 
-                    var settings = $.extend({
+                    var settings = $.extend(true, {
                             ajaxURL:                '',
                             postBrowserInfo:        true,
                             postHTML:               true,
