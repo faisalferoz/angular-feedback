@@ -1,5 +1,5 @@
 angular.module('angular-send-feedback').directive('angularFeedback', [ function() {
-        
+
 
     return {
         restrict: 'EA',
@@ -150,6 +150,10 @@ angular.module('angular-send-feedback').directive('angularFeedback', [ function(
                                 drag        = false;
                                 highlight   = 1,
                                 post        = {};
+
+                                if (settings.contact) {
+                                    post.contact = settings.contact;
+                                }
 
                                 if (settings.postBrowserInfo) {
                                     post.browser                = {};
@@ -627,10 +631,10 @@ angular.module('angular-send-feedback').directive('angularFeedback', [ function(
 
                 }(jQuery));
 
-            
+
             jQuery.feedback($scope.options);
 
-            
+
 
         }
     };

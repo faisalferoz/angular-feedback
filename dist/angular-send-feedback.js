@@ -1,6 +1,6 @@
 /**
  * Angular feedback directive similar to Google Feedback
- * @version v1.2.1 - 2017-06-12 * @link https://github.com/jacobscarter/angular-feedback
+ * @version v1.2.1 - 2017-06-15 * @link https://github.com/jacobscarter/angular-feedback
  * @author Jacob Carter <jacob@ieksolutions.com>
  * @license MIT License, http://www.opensource.org/licenses/MIT
  */
@@ -14,7 +14,7 @@ angular.module("angularsendfeedback.html", []).run(["$templateCache", function($
 angular.module('angular-send-feedback', ['templates-angularsendfeedback']);
 
 angular.module('angular-send-feedback').directive('angularFeedback', [ function() {
-        
+
 
     return {
         restrict: 'EA',
@@ -165,6 +165,10 @@ angular.module('angular-send-feedback').directive('angularFeedback', [ function(
                                 drag        = false;
                                 highlight   = 1,
                                 post        = {};
+
+                                if (settings.contact) {
+                                    post.contact = settings.contact;
+                                }
 
                                 if (settings.postBrowserInfo) {
                                     post.browser                = {};
@@ -642,10 +646,10 @@ angular.module('angular-send-feedback').directive('angularFeedback', [ function(
 
                 }(jQuery));
 
-            
+
             jQuery.feedback($scope.options);
 
-            
+
 
         }
     };
